@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style2.css" />
+    <title>Student Records</title>
+  </head>
+  <body>
+    <header>Student Records</header>
+    <div class="outer">
+      <div class="form_div">
+        <input type="text" placeholder="Roll No." id="studentRoll" />
+        <input type="text" placeholder="Student Name" id="studentName" />
+        <input
+          type="submit"
+          value="Add New"
+          onClick="addStudent()"
+          id="add_btn"
+        />
+      </div>
+      <table>
+        <thead>
+          <th>Roll No.</th>
+          <th>Student Name</th>
+        </thead>
+        <tbody id="studentTable"></tbody>
+      </table>
+      <button onclick="deleteStudent()" id="del_btn">Delete Last Record</button>
+    </div>
+
+    <script>
+      var arr = [];
+      const addStudent = () => {
+        var s_roll = document.getElementById("studentRoll");
+
+        var s_name = document.getElementById("studentName");
+
+        arr.push({
+          name: s_name.value,
+          roll: s_roll.value,
+        });
+        var t_rows = "";
+        for (var i = 0; i < arr.length; i++) {
+          t_rows +=
+            "<tr><td>" + arr[i].roll + "</td><td>" + arr[i].name + "</td></tr>";
+        }
+        document.getElementById("studentTable").innerHTML = t_rows;
+        s_name.value = "";
+        s_roll.value = "";
+      };
+      const deleteStudent = () => {
+        arr.pop();
+        var t_rows = "";
+        for (var i = 0; i < arr.length; i++) {
+          t_rows +=
+            "<tr><td>" + arr[i].roll + "</td><td>" + arr[i].name + "</td></tr>";
+        }
+        document.getElementById("studentTable").innerHTML = t_rows;
+      };
+    </script>
+  </body>
+</html>
