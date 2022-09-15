@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="myscripts.js"></script>
+  </head>
+  <body onkeyup="handleBody(e)">
+    <label
+      >Manager Name:
+      <input value="" type="text" name="mname" required id="nameid"
+    /></label>
+    <br />
+    <label
+      >Group Email: <input type="email" name="email" required id="emailid"
+    /></label>
+    <br />
+
+    <label
+      >Server Username:
+      <input id="sname" type="text" name="sname" required onkeyup="f(event)"
+    /></label>
+    <span id="error_msg"></span>
+    <br />
+
+    <label
+      >Server Password: <input type="password" name="pass" required id="pass"
+    /></label>
+    <br />
+    <label
+      >Confirm Password:
+      <input
+        type="password"
+        name="password"
+        required
+        onfocusout="checkPass()"
+        id="conp"
+    /></label>
+    <br />
+    <label>Team Lead:</label>
+    <select id="lead" name="lead">
+      <option value="Naruto">Naruto</option>
+      <option value="Sakura">Sakura</option>
+      <option value="Sasuke">Sasuke</option>
+    </select>
+    <br />
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <p draggable="true" value="Boruto" ondragstart="drag(event)" id="drag1">
+        Boruto
+      </p>
+      <p draggable="true" value="Denki" ondragstart="drag(event)" id="drag2">
+        Denki
+      </p>
+      <p draggable="true" value="Sarada" ondragstart="drag(event)" id="drag3">
+        Sarada
+      </p>
+      <p draggable="true" value="Mitsuki" ondragstart="drag(event)" id="drag4">
+        Mitsuki
+      </p>
+    </div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br />
+    <input type="submit" value="Submit" onclick="handleSubmit()" />
+    <script></script>
+  </body>
+</html>
