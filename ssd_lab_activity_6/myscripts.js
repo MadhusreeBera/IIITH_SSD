@@ -1,4 +1,5 @@
 var flag = true;
+var flag1 = true;
 function handleSubmit() {
   console.log("clicked");
   const name = document.getElementById("nameid").value;
@@ -17,7 +18,7 @@ function handleSubmit() {
     //   console.log(ele.id);
     console.log(ele.innerText);
   });
-  if (name != "" && email != "" && username != "" && lead != "" && flag) {
+  if (name != "" && email != "" && username != "" && lead != "" && flag && flag1) {
     alert(
       "Name: " +
         name +
@@ -55,11 +56,11 @@ function f(event) {
     if (hasUpperCase(s) && hasDigit(s)) {
       // console.log("valid");
       err.innerHTML = "";
-      flag = true;
+      flag1 = true;
     } else {
       // console.log("invalid");
       err.innerHTML = "Invalid Username";
-      flag = false;
+      flag1 = false;
     }
   }
 }
